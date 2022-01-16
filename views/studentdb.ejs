@@ -1,0 +1,33 @@
+<%- include('include/_header') %>
+<link rel="stylesheet" href="css/styledb.css" />
+
+<main id="site-main">
+  <div class="container">
+    <%- include("./include/_buttons.ejs") %>
+
+    <!-- form handling -->
+    <form action="/" method="POST">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Roll no.</th>
+            <th>Name</th>
+            <th>@Email</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Stream</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- include ("./include/_show.ejs") %>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

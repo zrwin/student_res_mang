@@ -1,0 +1,203 @@
+<!-- form handling -->
+<form action="/api/results" method="POST" id="add_user">
+  <div class="new_user">
+    <div class="form-group semester-container">
+      <label for="Semester" class="text-light">Select Semester</label>
+      <select name="stream" id="drop-down" class="form-select semester">
+        <option value="none" selected disabled hidden>Choose</option>
+        <option value="year1">1st Year</option>
+        <option value="year2">2nd Year</option>
+        <option value="year3">3rd Year</option>
+        <option value="year4">4th Year</option>
+      </select>
+    </div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>University Roll No.</th>
+          <th>Student Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>
+          <div class="form-group">
+            <input type="hidden" name="id" value="" />
+            <input
+              type="text"
+              name="roll"
+              value=""
+              placeholder="Enter Roll no."
+              required
+            />
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <input type="hidden" name="id" value="" />
+            <input
+              type="text"
+              name="name"
+              value=""
+              placeholder="Student Name"
+              required
+            />
+          </div>
+        </td>
+      </tbody>
+    </table>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Subjects</th>
+          <th>Marks Obtained</th>
+          <th>Total Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject1"
+                value=""
+                placeholder="Subject1 Name"
+                required
+              />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="marks1"
+                value=""
+                placeholder="Enter Marks Obtained"
+                required
+              />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="totmarks1"
+                value=""
+                placeholder="Enter Total Marks"
+                required
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject2"
+                value=""
+                placeholder="Subject2 Name"
+                required
+              />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="marks2"
+                value=""
+                placeholder="Enter Marks Obtained"
+                required
+              />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="totmarks2"
+                value=""
+                placeholder="Enter Total Marks"
+                required
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject3"
+                value=""
+                placeholder="Subject3 Name"
+                required
+              />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="marks3"
+                value=""
+                placeholder="Enter Marks Obtained"
+                required
+              />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input
+                type="text"
+                name="totmarks3"
+                value=""
+                placeholder="Enter Total Marks"
+                required
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="form-group">
+      <label for="Phone" class="text-light">Phone</label>
+      <input
+        type="text"
+        name="phone"
+        value=""
+        placeholder="+91xxxxxxxx"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Stream" class="text-light">Stream</label>
+      <select name="stream" id="drop-down" class="form-select">
+        <option value="none" selected disabled hidden>Choose</option>
+        <option value="C.S.E.">C.S.E.</option>
+        <option value="I.T.">I.T.</option>
+        <option value="Civil">Civil</option>
+        <option value="Chemical">Chemical</option>
+        <option value="Mechanical">Mechanical</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="gender" class="text-light">Gender</label>
+      <div class="radio inline">
+        <input type="radio" id="radio-2" name="gender" value="Male" required />
+        <label for="radio-2" class="radio-label">Male</label>
+      </div>
+      <div class="radio inline">
+        <input type="radio" id="radio-3" name="gender" value="Female" />
+        <label for="radio-3" class="radio-label">Female</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn text-dark update">Save</button>
+    </div>
+  </div>
+</form>
