@@ -1,5 +1,5 @@
 let Student = require("../model/studentSchema");
-
+const Result = require("../model/resultSchema");
 //create and save new student
 exports.create = (req, res) => {
   const newStudent = new Student({
@@ -102,3 +102,49 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+// //find all Result/single result
+
+// exports.findResult = (req, res) => {
+//   if (req.query.roll) {
+//     const roll = req.query.roll;
+//     const studentYear = req.query.year;
+//     console.log(req.query.year);
+//     console.log(req.query.roll);
+
+//     Result.findOne({
+//       $and: [
+//         { rollno: roll },
+//         {
+//           year: studentYear,
+//         },
+//       ],
+//     })
+//       .then((data) => {
+//         if (!data) {
+//           console.log(data);
+//         }
+//         res.send(data);
+//       })
+//       .catch((err) => {
+//         let err_message =
+//           err.message || "Some Error occured while fetching Student Result";
+//         req.flash("error_msg", err_message);
+//         res.redirect("/showResults");
+//       });
+//   } else {
+//     Result.find()
+//       .then((results) => {
+//         console.log("else block");
+//         console.log(results);
+//         res.send(results);
+//       })
+//       .catch((err) => {
+//         let err_message =
+//           err.message || "Some Error occured while fetching Student Result";
+
+//         req.flash("error_msg", err_message);
+//         res.redirect("/showResults");
+//       });
+//   }
+// };

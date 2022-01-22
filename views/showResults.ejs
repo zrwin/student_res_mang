@@ -1,0 +1,41 @@
+<%- include("./include/_header.ejs") %>
+<link rel="stylesheet" href="css/stylesearch.css" />
+<!--
+    prettier-ignore
+-->
+<div class="container-btn"><%- include ("./include/_buttons.ejs") %></div>
+<%- include("./partials/messages") %>
+<div class="box">
+  <div class="container-search">
+    <div class="btn-container">
+      <div class="btn-designer">
+        <a href="/studentResult?id=<%= id %>&roll=<%= roll %>&year=1" class="">
+          First Year
+        </a>
+      </div>
+    </div>
+    <div class="btn-container">
+      <div class="btn-designer">
+        <a href="/studentResult?id=<%= id %>&roll=<%= roll %>&year=2" class="">
+          Second Year
+        </a>
+      </div>
+    </div>
+    <div class="btn-container">
+      <div class="btn-designer">
+        <a href="/studentResult?id=<%= id %>&roll=<%= roll %>&year=3" class="">
+          Third Year
+        </a>
+      </div>
+    </div>
+    <div class="btn-container">
+      <div class="btn-designer">
+        <a href="/studentResult?id=<%= id %>&roll=<%= roll %>&year=4" class="">
+          Fourth Year
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("./include/_footer.ejs") %>

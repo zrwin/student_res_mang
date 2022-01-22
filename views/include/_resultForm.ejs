@@ -1,15 +1,17 @@
 <!-- form handling -->
-<form action="/api/results" method="POST" id="add_user">
+<form action="/addResult" method="POST" id="add_user">
   <div class="new_user">
-    <div class="form-group semester-container">
-      <label for="Semester" class="text-light">Select Semester</label>
-      <select name="stream" id="drop-down" class="form-select semester">
-        <option value="none" selected disabled hidden>Choose</option>
-        <option value="year1">1st Year</option>
-        <option value="year2">2nd Year</option>
-        <option value="year3">3rd Year</option>
-        <option value="year4">4th Year</option>
-      </select>
+    <div class="form-group">
+      <div class="nav-container">
+        <label for="Semester" class="text-light">Select Year</label>
+        <select name="year" id="drop-down" class="form-select semester">
+          <option value="none" selected disabled hidden>Choose</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+      </div>
     </div>
     <table class="table">
       <thead class="thead-dark">
@@ -163,12 +165,12 @@
     </table>
 
     <div class="form-group">
-      <label for="Phone" class="text-light">Phone</label>
+      <label for="Father's Name" class="text-light">Father's Name</label>
       <input
         type="text"
-        name="phone"
+        name="father"
         value=""
-        placeholder="+91xxxxxxxx"
+        placeholder="Enter Fathe's Name"
         required
       />
     </div>

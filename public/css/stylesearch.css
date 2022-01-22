@@ -8,12 +8,14 @@
 
 body {
   background-color: rgb(255, 255, 255);
+  -webkit-print-color-adjust: exact;
 }
 .box {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  margin: 4em auto;
   width: 100vw;
   flex-direction: column;
 }
@@ -21,15 +23,25 @@ body {
 #header {
   width: 100vw;
 }
+.container-btn {
+  margin: 1em auto;
+}
+.container-btn .box-nav > a {
+  display: flex;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  align-items: center;
+  justify-content: center;
+}
 
-.container {
+.container-search {
   background-color: rgb(123, 255, 189);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 20em;
-  padding: 4em;
+  padding: 6em;
   border-radius: 0.8em;
   position: relative;
 }

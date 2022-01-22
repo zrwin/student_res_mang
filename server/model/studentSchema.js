@@ -7,7 +7,6 @@ const studentSchema = {
   },
   rollno: {
     type: Number,
-    unique: true,
   },
   email: {
     type: String,

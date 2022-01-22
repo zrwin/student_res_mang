@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Overpass&family=Oxygen:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  background-color: rgb(197, 241, 239);
+  width: 50em;
+  margin: auto;
+  position: relative;
+  -webkit-print-color-adjust: exact;
+}
+
+.heading {
+  height: 4em;
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+  color: rgb(7, 7, 7);
+  position: relative;
+  top: 2em;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Overpass", sans-serif;
+  font-family: "Oxygen", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal-details {
+  height: 15.5em;
+  background-color: rgb(255, 255, 255);
+  width: 40em;
+  position: relative;
+  margin: auto;
+  top: 3em;
+  border-radius: 5px;
+}
+
+.personal-details-heading {
+  width: 100%;
+  background-color: rgb(241, 255, 255);
+
+  height: 2.4em;
+  margin: auto;
+  font-weight: 100;
+  font-family: "Overpass", sans-serif;
+  font-family: "Oxygen", sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  background-color: rgba(156, 154, 154, 0.767);
+  border: 0px;
+  width: 75%;
+
+  margin: 1em auto;
+  text-align: center;
+  border-radius: 5px;
+  font-family: "Hind Madurai", sans-serif;
+}
+
+table tr {
+  color: black;
+}
+th {
+  text-align: center;
+  background-color: #a1e0d1;
+}
+td {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 0.3em;
+}
+
+.marks {
+  height: 15em;
+  background-color: rgb(255, 255, 255);
+  width: 40em;
+  position: relative;
+  margin: 1em auto;
+  top: 3em;
+  border-radius: 5px;
+}
+
+.marks table thead td {
+  background-color: rgb(210, 236, 235);
+}
+
+.btn-print {
+  position: relative;
+  top: 2.5em;
+  margin: 1em auto;
+  width: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-print > button {
+  border-radius: 2px solid red;
+  width: 100%;
+  padding: 5px;
+}
+
+@media print {
+  .btn-print {
+    visibility: hidden;
+  }
+}

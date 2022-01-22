@@ -16,20 +16,19 @@
     <title>Search Student</title>
   </head>
   <body>
-    <div class="box">
-      <div id="header">
-        <nav>
-          <div id="header">
-            <div class="text-center" id="header">
-              <a href="/" class="nav-brand text-dark"
-                >Result Management System</a
-              >
-            </div>
+    <div id="header">
+      <nav>
+        <div id="header">
+          <div class="text-center" id="header">
+            <a href="/" class="nav-brand text-dark">Result Management System</a>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container-btn"><%- include ("./include/_buttons.ejs") %></div>
 
-      <div class="container">
+    <div class="box">
+      <div class="container-search">
         <h2 class="roll-title">Enter Student Roll to Search</h2>
         <form action="/search-student" method="post" role="search" id="form">
           <input

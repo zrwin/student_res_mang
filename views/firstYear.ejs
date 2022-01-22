@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Management</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/resultStyle.css" />
+  </head>
+  <body>
+    <!--prettier-ignore-->
+    <div class="container">
+        <div class="heading">
+            <h2>CALCUTTA INSTITUTE OF TECHONOLOGY</h2>
+        </div>
+        <div class="personal-details">
+            <div class="personal-details-heading">
+                <h3>Personal Details</h3>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="table-heading">University Roll No:</td>
+                    <td><%= result.rollno %></td>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                    <td><%= result.name %></td>
+                    </tr>
+                    <tr>
+                        <td>Father's Name:</td>
+                    <td><%= result.father %></td>
+                    </tr>
+                    <tr>
+                        <td>Stream:</td>
+                    <td><%= result.stream %></td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                    <td><%= result.gender %></td>
+                    </tr>
+                </tbody>
+            </table> 
+            
+        </div>
+        <div class="marks">
+            <div class="personal-details-heading">
+                <h3>Marks</h3>
+            </div>
+            <table>
+                <thead >
+                    <td>
+                        Subject
+                    </td>
+                    <td>
+                        Obtained Marks
+                    </td>
+                    <td>
+                        Total Marks 
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= result.subject1 %></td>
+                        <td>
+                            <%= result.marks1 %>
+                        </td>
+                        <td><%= result.totmarks1 %></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><%= result.subject2 %></td>
+                            <td>
+                                <%= result.marks2 %>
+                            </td>
+                            <td><%= result.totmarks2 %></td>
+                            </tr>
+                            
+
+                    <tr>
+                    <td><%= result.subject3 %></td>
+                    <td>
+                        <%= result.marks3 %>
+                    </td>
+                    <td><%= result.totmarks3 %></td>
+                    </tr>
+                    
+                </tbody>
+            </table> 
+
+        </div>
+        <div class="btn-print">
+            <button>
+                Print
+            </button>
+        </div>
+    </div>
+  </body>
+
+  <script>
+    const button = document.querySelector(".btn-print");
+
+    button.addEventListener("click", () => {
+      window.print();
+    });
+  </script>
+</html>
