@@ -1,0 +1,39 @@
+<%- include ("./include/_header.ejs") %>
+
+<%- include ("./include/_navbar.ejs") %>
+<div class="d-flex">
+  <div class="main">
+    <div class="options-container">
+      <%- include("./include/_sidebarButtons.ejs") %>
+    </div>
+  </div>
+  <div class="displayed">
+      <!-- leave-->
+      <main id="site-main">
+        <div class="container">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Roll</th>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Stream</th>
+                <th>Father</th>
+                <th>Gender</th>
+                <th>Action</th>
+              </tr>
+              
+            </thead>
+            <tbody>
+                <%- include("./include/_showResult.ejs") %>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

@@ -17,36 +17,58 @@
                 <span class="text-light">Use the below form to Update an account</span>
               </div>
           
-              <!-- add students form -->
+              <!-- add results form -->
               <!-- form handling -->
-              <form method="post" id="update_user">
+              <form method="post" id="update_result">
                 <div class="new_user">
                   <div class="form-group">
+                    <label for="Roll" class="text-light">Roll</label>
+                    <input
+                      type="text"
+                      name="roll no"
+                      value="<%= results.rollno %>"
+                      
+                      required
+                    />
+                  </div>
+                  
+                  <div class="form-group">
                     <label for="name" class="text-light">Name</label>
-                    <input type="hidden" name="id" value="<%= students._id %>" />
+                    <input type="hidden" name="id" value="<%= results._id %>" />
                     <input
                       type="text"
                       name="name"
-                      value="<%= students.name %>"
+                      value="<%= results.name %>"
                       placeholder="Student Name"
+                      required
                     />
                   </div>
                   <div class="form-group">
-                    <label for="Email" class="text-light">Email</label>
+                    <label for="Year" class="text-light">Year</label>
                     <input
                       type="text"
-                      name="email"
-                      value="<%= students.email%>"
-                      placeholder="example@gmail.com"
+                      name="year"
+                      value="<%= results.year%>"
+                      required
                     />
                   </div>
                   <div class="form-group">
-                    <label for="Phone" class="text-light">Phone</label>
+                    <label for="Stream" class="text-light">Stream</label>
                     <input
                       type="text"
-                      name="phone"
-                      value="<%= students.phone %>"
-                      placeholder="+91xxxxxxxx"
+                      name="stream"
+                      value="<%= results.stream %>"
+                      
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Father" class="text-light">Father's name</label>
+                    <input
+                      type="text"
+                      name="father"
+                      value="<%= results.father %>"
+                      
                       required
                     />
                   </div>
@@ -54,29 +76,31 @@
                     <label for="gender" class="text-light">Gender</label>
                     <div class="radio inline">
                       <input type="radio" id="radio-2" name="gender" value="Male" <%=
-                      students.gender == 'Male' ? 'checked' : '' %>>
+                      results.gender == 'Male' ? 'checked' : '' %>>
                       <label for="radio-2" class="text-gray radio-label">Male</label>
                     </div>
                     <div class="radio inline">
                       <input type="radio" id="radio-3" name="gender" value="Female" <%=
-                      students.gender == 'Female' ? 'checked' : '' %> >
+                      results.gender == 'Female' ? 'checked' : '' %> >
                       <label for="radio-3" class="text-gray radio-label">Female</label>
                     </div>
                   </div>
           
-                  <div class="form-group" style="margin-top: 19px;" >
+                  <div class="form-group" style="margin-top:19px;">
                     <button type="submit" class="btn text-dark update">Save</button>
                   </div>
                 </div>
+              
+                  
               </form>
+              
             </div>
           </main>
-        </div>  
+        </div>
       </div>
     </div>
-    
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
+
   </body>
 </html>

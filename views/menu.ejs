@@ -1,0 +1,52 @@
+<%- include("./include/_header.ejs") %>
+
+    <%- include ("./include/_navbar.ejs") %>
+    <div class="d-flex">
+      <div class="main">
+        <div class="options-container">
+          <%- include("./include/_sidebarButtons.ejs") %>
+        </div>
+      </div>
+      <div class="displayed">
+          <!-- leave-->
+          <div class="info">
+            <div class="info-box grid1">
+              <span class="icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <div class="info-text">
+                <span class="count">
+                    <%= totalstd %>
+                </span>
+                Regd Students
+              </div>
+            </div>
+            <div class="info-box grid2">
+              <span class="icon">
+                <i class="fa-solid fa-ticket" style="transform: rotate(-40deg);"></i>
+              </span>
+              
+            </div>
+            <div class="info-box grid3">
+              <span class="icon">
+                <i class="fa fa-bank"></i>
+              </span>
+            </div>
+            <div class="info-box grid4">
+              <span class="icon">
+                <i class="fa-solid fa-file-lines"></i>
+              </span>
+              <div class="info-text">
+                <span class="count">
+                  <%= totresult %>
+                </span>
+                 Results Declared
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

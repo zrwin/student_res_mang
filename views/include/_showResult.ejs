@@ -1,0 +1,37 @@
+<!-- prettier-ignore -->
+<% for(var i =0 ; i< results.length; i++) { %>
+<tr>
+  <td><%= results[i].rollno %></td>
+  <td><%= results[i].name %></td>
+  <td><%= results[i].year %></td>
+  <td><%= results[i].stream %></td>
+  <td><%= results[i].father %></td>
+  <td><%= results[i].gender %></td>
+  <td>
+    <a
+      href="/update-result?id=<%= results[i]._id %>"
+      class="btn border-shadow update"
+    >
+      <span class="text-gradient">
+        <i class="fa fa-pencil-alt"></i>
+      </span>
+    </a>
+    <!-- prettier-ignore -->
+    <a
+        class="btn border-shadow delete-result"  data-id="<%= results[i]._id %>" >
+        <span class="text-gradient">
+          <i class="far fa-trash-alt"></i>
+        </span>
+      </a>
+    <!--prettier-ignore-->
+    <a href="/get-result?id=<%= results[i]._id %>" 
+    class="btn border-shadow show-result" 
+      >
+      <span class="text-gradient">
+        <i class="far fa-eye"></i>
+      </span>
+    </a>
+  </td>
+</tr>
+
+<% } %>

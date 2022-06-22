@@ -1,46 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/styledb.css" />
-    <link rel="stylesheet" href="css/stylesearch.css" />
-    <title>Search Student</title>
-  </head>
-  <body>
-    <div id="header">
-      <nav>
-        <div id="header">
-          <div class="text-center" id="header">
-            <a href="/" class="nav-brand text-dark">Result Management System</a>
+<%- include("./include/_header.ejs") %>
+<link rel="stylesheet" href="./css/stylesearch.css">
+<%- include ("./include/_navbar.ejs") %>
+    <div class="d-flex">
+      <div class="main">
+        <div class="options-container">
+          <%- include("./include/_sidebarButtons.ejs") %>
+        </div>
+      </div>
+      <div class="displayed">
+        <!-- leave-->
+        <div class="box">
+          <div class="container-search">
+            <h2 class="roll-title">Enter Student Roll to Search</h2>
+            <form
+              action="/search-student"
+              method="post"
+              role="search"
+              id="form"
+            >
+              <input
+                type="search"
+                id="query"
+                name="query"
+                placeholder="Search..."
+              />
+              <button type="submit" class="button" name="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
           </div>
         </div>
-      </nav>
-    </div>
-    <div class="container-btn"><%- include ("./include/_buttons.ejs") %></div>
-
-    <div class="box">
-      <div class="container-search">
-        <h2 class="roll-title">Enter Student Roll to Search</h2>
-        <form action="/search-student" method="post" role="search" id="form">
-          <input
-            type="search"
-            id="query"
-            name="query"
-            placeholder="Search..."
-          />
-          <button type="submit" name="submit">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
       </div>
     </div>
   </body>

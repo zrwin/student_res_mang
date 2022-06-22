@@ -6,6 +6,7 @@ const app = express();
 require("./db/conn");
 const Student = require("./server/model/studentSchema");
 const User = require("./models/schema");
+
 const port = process.env.PORT || 8000;
 const passport = require("passport");
 const flash = require("connect-flash");
@@ -43,11 +44,10 @@ app.use((req, res, next) => {
 app.use("/css", express.static(path.resolve(__dirname, "public/css")));
 app.use("/img", express.static(path.resolve(__dirname, "public/img")));
 app.use("/js", express.static(path.resolve(__dirname, "public/js")));
-
 //load routers for studentddb
 app.use("/", require("./server/routes/router"));
 
-app.post("/studentdb", async (req, res) => {
+app.post("/menu", async (req, res) => {
   const { name, password } = req.body;
   const user = await User.findOne({ name, password });
   if (!user) {
@@ -55,7 +55,7 @@ app.post("/studentdb", async (req, res) => {
 
     res.redirect("/");
   } else {
-    res.redirect("/studentdb");
+    res.redirect("/menu");
   }
 });
 
@@ -85,12 +85,9 @@ app.post("/register", async (req, res) => {
       res.redirect("/register");
     }
   } catch (error) {
-    console.log(error);
+    req.flash("error_msg", error.message);
+    res.redirect("/redirect");
   }
-});
-
-app.post("/search-student", (req, res) => {
-  console.log(req.body.query);
 });
 
 app.listen(port, () => {

@@ -103,48 +103,76 @@ exports.delete = (req, res) => {
     });
 };
 
-// //find all Result/single result
+//find all/single Result
 
-// exports.findResult = (req, res) => {
-//   if (req.query.roll) {
-//     const roll = req.query.roll;
-//     const studentYear = req.query.year;
-//     console.log(req.query.year);
-//     console.log(req.query.roll);
+exports.findResult = (req, res) => {
+  if (req.query.id) {
+    const id = req.query.id;
 
-//     Result.findOne({
-//       $and: [
-//         { rollno: roll },
-//         {
-//           year: studentYear,
-//         },
-//       ],
-//     })
-//       .then((data) => {
-//         if (!data) {
-//           console.log(data);
-//         }
-//         res.send(data);
-//       })
-//       .catch((err) => {
-//         let err_message =
-//           err.message || "Some Error occured while fetching Student Result";
-//         req.flash("error_msg", err_message);
-//         res.redirect("/showResults");
-//       });
-//   } else {
-//     Result.find()
-//       .then((results) => {
-//         console.log("else block");
-//         console.log(results);
-//         res.send(results);
-//       })
-//       .catch((err) => {
-//         let err_message =
-//           err.message || "Some Error occured while fetching Student Result";
+    Result.findById(id)
+      .then((data) => {
+        if (!data) {
+          res.status(404).send({
+            message: "No result found with id:" + id,
+          });
+        } else {
+          res.send(data);
+        }
+      })
+      .catch((err) => {
+        res.send(500).send({
+          message: "Error retrieving REsult with id:" + id,
+        });
+      });
+  } else {
+    Result.find()
+      .then((result) => {
+        res.send(result);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message: err.message || "Error occurred while retrieving result",
+        });
+      });
+  }
+};
 
-//         req.flash("error_msg", err_message);
-//         res.redirect("/showResults");
-//       });
-//   }
-// };
+exports.deleteResult = (req, res) => {
+  const id = req.params.id;
+  Result.findByIdAndDelete(id)
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot delete with id: ${id}`,
+        });
+      } else {
+        res.send({
+          message: "Student deleted successfully",
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: `Could not delete User with id ${id}`,
+      });
+    });
+};
+
+exports.updateResult = (req, res) => {
+  const id = req.params.id;
+  Result.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update result details with ${id}`,
+        });
+      } else {
+        res.send(data);
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error Update Result Information",
+      });
+    });
+};

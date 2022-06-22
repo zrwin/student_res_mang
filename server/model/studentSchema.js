@@ -21,6 +21,9 @@ const studentSchema = {
   stream: {
     type: String,
   },
+  status: {
+    type: String,
+  },
 };
 
 const Student = mongoose.model("Student", studentSchema);

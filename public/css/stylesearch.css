@@ -6,17 +6,12 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: rgb(255, 255, 255);
-  -webkit-print-color-adjust: exact;
-}
 .box {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin: 4em auto;
-  width: 100vw;
+  width: 100%;
   flex-direction: column;
 }
 
@@ -35,7 +30,7 @@ body {
 }
 
 .container-search {
-  background-color: rgb(123, 255, 189);
+  background-color: rgb(123, 160, 255);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +49,7 @@ body {
 
 form {
   background-color: #ffffff;
+  color: black;
   width: 19em;
   height: 44px;
   border-radius: 5px;
@@ -74,9 +70,37 @@ input {
   opacity: 0.7;
 }
 
-button {
+.button {
   all: unset;
   cursor: pointer;
   width: 44px;
   height: 44px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-designer {
+  padding: 0.9em 1em;
+  background-color: #249ba9;
+  border: none;
+  font-family: "PT Sans", sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 0.2em;
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+.btn-designer:hover {
+  background-color: rgb(89, 90, 180);
+}
+.btn-designer > a:hover {
+  color: #fff;
+}
+
+.btn-designer > a {
+  padding: 2em;
 }
